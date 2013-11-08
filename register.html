@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+  <title>Create an Account</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+      <h1>Welcome to Forest.</h1>
+      <p> Please fill in the below information. </p>
+
+	<form id='register' action='register.php' method='post'>
+	<h2>Register</h2>
+
+	<input type='hidden' name='submitted' id='submitted' value='1'/>
+
+	<label for=‘firstName' >First Name: </label>
+	<input type='text' name=‘firstName' id='name' maxlength="50" /><br>
+
+	<label for=‘lastName >Last Name: </label>
+	<input type='text' name=‘lastName' id='name' maxlength="50" /><br>
+
+	<label for='email' >Email Address:</label>
+	<input type='text' name='email' id='email' maxlength="50" /><br>
+
+	<label for=‘organization >Organization: </label>
+	<input type='text' name=‘organization’ id='name' maxlength=“100” /><br>
+
+	<select>
+		<option value=“”>Select one</option>
+		<option value=“it”>IT</option>
+		<option value=“admin”>Admin</option>
+		<option value=“student”>Student</option>
+	</select><br>
+ 
+	<label for='username' >UserName:</label>
+	<input type='text' name='username' id='username' maxlength="50" /><br>
+ 
+	<label for='password' >Password:</label>
+	<input type='password' name='password' id='password' maxlength="50" /><br>
+
+	<input type='submit' name='Submit' value='Submit' />
+ 	</form>
+
+</body>
+</html>
