@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+	<title>Forest - Sort by Location</title>
+
+	<link rel="stylesheet" href="stylesheet.css">
+
+	<script type="text/javascript" src="http://www.acmeous.com/tutorials/demo/acmeousCollapsibleLists/acmeousCollapsibleLists.js">
+	</script>
+
+	<script type="text/javascript">
+	if (window.addEventListener) {
+		window.addEventListener("load", function(){makeCollapsible(document.getElementById('locationList'), 0);}, false);
+	}
+	else if (window.attachEvent) {
+		window.attachEvent("onload", function(){makeCollapsible(document.getElementById('locationList'), 1);});
+	}
+	else {
+		window.onload = function(){makeCollapsible(document.getElementById('locationList'), 1);};
+	}
+	</script>
+
+</head>
+
+
+
+<body>
+<h1>Forest</h1>
+
+<ul id="locationList">
+	<li>Trumbower
+		<ul style="list-style: none;">
+		<li>
+			<table id="trumbower">
+			    <thead>
+			        <tr>
+			            <th>Red/Green/Off</th>
+			            <th>Name</th>
+			            <th>IP Address</th>
+			            <th>Status</th>
+			            <th>Alert</th>
+			            <th>Make</th>
+			            <th>Paper level</th>
+			            <th>Ink level</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			      <tr>
+			          <td>Green</td>
+			          <td>Trumbower 48</td>
+			          <td>192.168.130.238</td>
+			          <td>Idle</td>
+			          <td>-</td>
+			          <td>HP LaserJet P4010 Series</td>
+			          <td>Low</td>
+			          <td>Good</td>
+			      </tr>
+			    </tbody>
+			</table>
+		</li>
+		</ul>
+	</li>
+</ul>
+
+</body>
+</html>
+
+<!-- old code:
+
+<script type="text/javascript">
+	document.cestatus = 0;
+	function cecontrol(id){
+		if(document.cestatus == 0){
+			document.getElementById(id).style.display = "block";
+			document.cestatus = 1;
+		}else{
+			document.getElementById(id).style.display = "none";
+			document.cestatus = 0;
+		}
+	}
+	cecontrol("row");
+</script>
+
+<style type="text/css">
+	#row{display:none;}
+</style>
+
+<button onclick="cecontrol('row')">+/-</button> Trumbower
+	<table id="row">
+	    <tr>
+	        <th>Red/Green/Off</th>
+	        <th>Name</th>
+	        <th>IP Address</th>
+	        <th>Status</th>
+	        <th>Alert</th>
+	        <th>Make</th>
+	        <th>Paper level</th>
+	        <th>Ink level</th>
+	    </tr>
+	    <tr>
+	        <td>Green</td>
+	        <td>Trumbower 48</td>
+	        <td>192.168.130.238</td>
+	        <td>Idle</td>
+	        <td>-</td>
+	        <td>HP LaserJet P4010 Series</td>
+	        <td>Low</td>
+	        <td>Good</td>
+	    </tr>
+	</table>
+-->
