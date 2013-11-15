@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <head>
-	<title>Forest - Sort by Location</title>
+	<title>Forest&trade; - Sort by Location</title>
 
 	<link rel="stylesheet" href="stylesheet.css">
+
 
 	<script type="text/javascript" src="http://www.acmeous.com/tutorials/demo/acmeousCollapsibleLists/acmeousCollapsibleLists.js">
 	</script>
@@ -18,33 +19,44 @@
 	}
 	</script>
 
+	<script type="text/javascript" src="http://tablesorter.com/jquery-latest.js"></script> 
+	<script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	$("#trumbower").tablesorter( {sortList: [[1,0]]} );
+	});
+	</script>
+
 </head>
 
-
-
 <body>
-<h1>Forest</h1>
+  <div class="icon">
+    <a href="home.html">
+      <img src="file:///Users/Mac/Documents/Fall2013/Software_Engineering/printerSystemCSI210/documents/websiteIcon.png" alt="Forest icon">
+    </a>
+  </div>
 
 <div class="navigate">
 <ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#sortby">Sort by</a></li>
+<li><a href="home.html">Home</a></li>
+<li><a href="sortby_location.html">Sort by</a></li>
 <li><a href="#contact">Contact</a></li>
 <li><a href="#about">About</a></li>
 </ul>
 </div>
 
-<ul id="locationList">
+
+<div class="innerbox">
+<ul class="expandlist" id="locationList">
 	<li>Trumbower
 		<ul style="list-style: none;">
 		<li>
-			<table id="trumbower">
+			<table id="trumbower" class="tablesorter">
 			    <thead>
 			        <tr>
-			            <th>Red/Green/Off</th>
+			            <th>Status</th>
 			            <th>Name</th>
 			            <th>IP Address</th>
-			            <th>Status</th>
 			            <th>Alert</th>
 			            <th>Make</th>
 			            <th>Paper level</th>
@@ -53,11 +65,10 @@
 			    </thead>
 			    <tbody>
 			      <tr>
-			          <td>Green</td>
+			          <td>Idle</td>
 			          <td>Trumbower 48</td>
 			          <td>192.168.130.238</td>
-			          <td>Idle</td>
-			          <td>-</td>
+			          <td></td>
 			          <td>HP LaserJet P4010 Series</td>
 			          <td>Low</td>
 			          <td>Good</td>
@@ -67,52 +78,38 @@
 		</li>
 		</ul>
 	</li>
+	<li>Shankwieler
+		<ul style="list-style: none;">
+		<li>
+			<table id="shank" class="tablesorter">
+			    <thead>
+			        <tr>
+			            <th>Status</th>
+			            <th>Name</th>
+			            <th>IP Address</th>
+			            <th>Alert</th>
+			            <th>Make</th>
+			            <th>Paper level</th>
+			            <th>Ink level</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			      <tr>
+			          <td>Off</td>
+			          <td>Shankwieler Lab</td>
+			          <td>192.168.130.287</td>
+			          <td>Bad</td>
+			          <td>HP LaserJet P4010 Series</td>
+			          <td>None</td>
+			          <td>None</td>
+			      </tr>
+			    </tbody>
+			</table>
+		</li>
+		</ul>
+	</li>
 </ul>
+</div>
 
 </body>
 </html>
-
-<!-- old code:
-
-<script type="text/javascript">
-	document.cestatus = 0;
-	function cecontrol(id){
-		if(document.cestatus == 0){
-			document.getElementById(id).style.display = "block";
-			document.cestatus = 1;
-		}else{
-			document.getElementById(id).style.display = "none";
-			document.cestatus = 0;
-		}
-	}
-	cecontrol("row");
-</script>
-
-<style type="text/css">
-	#row{display:none;}
-</style>
-
-<button onclick="cecontrol('row')">+/-</button> Trumbower
-	<table id="row">
-	    <tr>
-	        <th>Red/Green/Off</th>
-	        <th>Name</th>
-	        <th>IP Address</th>
-	        <th>Status</th>
-	        <th>Alert</th>
-	        <th>Make</th>
-	        <th>Paper level</th>
-	        <th>Ink level</th>
-	    </tr>
-	    <tr>
-	        <td>Green</td>
-	        <td>Trumbower 48</td>
-	        <td>192.168.130.238</td>
-	        <td>Idle</td>
-	        <td>-</td>
-	        <td>HP LaserJet P4010 Series</td>
-	        <td>Low</td>
-	        <td>Good</td>
-	    </tr>
-	</table>
--->

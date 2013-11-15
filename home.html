@@ -1,26 +1,30 @@
 
-<!-- Below code is some resources for future reference. -->
-
 <!DOCTYPE html>
 <head>
-  <title>Welcome to Forest</title>
+  <title>Forest&trade;</title>
   <link rel="stylesheet" href="stylesheet.css">
 
   <script type="text/javascript" src="http://tablesorter.com/jquery-latest.js"></script> 
   <script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
+
   <script type="text/javascript">
-    $(document).ready(function()
-      {$("#homeTable").tablesorter({sortList:[[0,0],[2,1]]});
+  $(document).ready(function() {
+  $("#homeTable").tablesorter({sortList: [[1,0]] });
+  });
   </script>
 
 </head>
 <body>
-	<h1>Forest</h1>
+  <div class="icon">
+    <a href="home.html">
+      <img src="file:///Users/Mac/Documents/Fall2013/Software_Engineering/printerSystemCSI210/documents/websiteIcon.png" alt="Forest icon">
+    </a>
+  </div>
 
   <div class="navigate">
   <ul>
-  <li><a href="#home">Home</a></li>
-  <li><a href="#sortby">Sort by</a></li>
+  <li><a href="home.html">Home</a></li>
+  <li><a href="sortby_location.html">Sort by</a></li>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#about">About</a></li>
   </ul>
@@ -30,267 +34,37 @@
 
   <table id="homeTable" class="tablesorter">
     <thead>
-        <tr>
-            <th>Red/Green/Off</th>
-            <th>Name</th>
-            <th>IP Address</th>
-            <th>Status</th>
-            <th>Alert</th>
-            <th>Make</th>
-            <th>Paper level</th>
-            <th>Ink level</th>
-        </tr>
+      <tr>
+          <th>Status</th>
+          <th>Name</th>
+          <th>IP Address</th>
+          <th>Alert</th>
+          <th>Make</th>
+          <th>Paper level</th>
+          <th>Ink level</th>
+      </tr>
     </thead>
     <tbody>
       <tr>
-          <td>Green</td>
+          <td>Idle</td>
           <td>Trumbower 48</td>
           <td>192.168.130.238</td>
-          <td>Idle</td>
-          <td>-</td>
+          <td></td>
           <td>HP LaserJet P4010 Series</td>
           <td>Low</td>
           <td>Good</td>
+      </tr>
+      <tr>
+          <td>Off</td>
+          <td>Shankwieler Lab</td>
+          <td>192.168.130.287</td>
+          <td>Bad</td>
+          <td>HP LaserJet P4010 Series</td>
+          <td>None</td>
+          <td>None</td>
       </tr>
     </tbody>
 </table>
 
 </body>
 </html>
-
-
-
-<!-- Link for making tables: http://truben.no/latex/table/ -->
-
-<!-- Sample table for our purposes: 
-	<table>
-    <tr>
-        <th>Red/Green/Off</th>
-        <th>Name</th>
-        <th>IP Address</th>
-        <th>Status</th>
-        <th>Alert</th>
-        <th>Make</th>
-        <th>Paper level</th>
-        <th>Ink level</th>
-    </tr>
-    <tr>
-        <td>Green</td>
-        <td>Trumbower 48</td>
-        <td>192.168.130.238</td>
-        <td>Idle</td>
-        <td>-</td>
-        <td>HP LaserJet P4010 Series</td>
-        <td>Low</td>
-        <td>Good</td>
-    </tr>
-</table>
-
-
-
-
-	<table>
-		<thead>
-		    <tr>
-		        <th>Red/Green/Off</th>
-		        <th>Name</th>
-		        <th>IP Address</th>
-		        <th>Status</th>
-		        <th>Alert</th>
-		        <th>Make</th>
-		        <th>Paper level</th>
-		        <th>Ink level</th>
-		    </tr>
-		</thead>
-    <tr>
-        <td>Green</td>
-        <td>Trumbower 48</td>
-        <td>192.168.130.238</td>
-        <td>Idle</td>
-        <td>-</td>
-        <td>HP LaserJet P4010 Series</td>
-        <td>Low</td>
-        <td>Good</td>
-    </tr>
-</table>
-
--->
-
-
-
-
-
-<!-- Code for Expandable and Collapsible HTML tables (FANCY)
-<html>
-<head>
-<TITLE>Expandable and collapsible table - demo</TITLE>
-<script type="text/javascript">
-function toggle_visibility(tbid,lnkid)
-{
-  if(document.all){document.getElementById(tbid).style.display = document.getElementById(tbid).style.display == "block" ? "none" : "block";}
-  else{document.getElementById(tbid).style.display = document.getElementById(tbid).style.display == "table" ? "none" : "table";}
-  document.getElementById(lnkid).value = document.getElementById(lnkid).value == "[-] Collapse" ? "[+] Expand" : "[-] Collapse";
- }
-</script>
-<style type="text/css">
-#tbl1,#tbl2 {display:none;}
-#lnk1,#lnk2 {border:none;background:none;width:85px;}
-td {FONT-SIZE: 75%; MARGIN: 0px; COLOR: #000000;}
-td {FONT-FAMILY: verdana,helvetica,arial,sans-serif}
-a {TEXT-DECORATION: none;}
-</style>
-</head>
-<body>
- <table width="800px" border="0" align="center" cellpadding="4" cellspacing="0">
-  <tr height="1">
-   <td bgcolor="#727272" colspan="3"></td>
-  </tr>
-  <tr bgcolor="#EEEEEE" height="15">
-   <td><strong>Project name 1</strong></td>
-   <td></td>
-   <td bgcolor="#EEEEEE" align="right"><input id="lnk1" type="button" value="[+] Expand" onclick="toggle_visibility('tbl1','lnk1');"></td>
-  </tr>
-  <tr>
-   <td colspan="3">
-    <table width="100%" border="0" cellpadding="4" cellspacing="0" id="tbl1">
-     <tr>
-      <td colspan="3">Short summary which describes Project 1.</td>
-     </tr>
-     <tr bgcolor="#EEEEEE">
-      <td width="70%">File Name</td>
-      <td width="15%">Size</td>
-      <td  width="15%"></td>
-     </tr>
-     <tr>
-      <td>Document 1 of the project 1.doc</td>
-      <td>209.5 KB</td>
-      <td><a href="#">Download</a></td>
-     </tr>
-     <tr height="1">
-      <td colspan="3" bgcolor="#CCCCCC"></td>
-     </tr>
-     <tr>
-      <td>Document 2 of the project 1.doc</td>
-      <td>86 KB</td>
-      <td><a href="#">Download</a></td>
-     </tr>
-     <tr height="1">
-      <td colspan="3" bgcolor="#CCCCCC"></td>
-     </tr>
-     <tr>
-      <td>Document 3 of the project 1.doc</td>
-      <td>325.5 KB</td>
-      <td><a href="#">Download</a></td>
-     </tr>
-     <tr height="1">
-      <td colspan="3" bgcolor="#CCCCCC"></td>
-     </tr>
-     <tr height="1">
-      <td bgcolor="#CCCCCC" colspan="3"></td>
-     </tr>
-     <tr height="1">
-      <td bgcolor="#727272" colspan="3"></td>
-     </tr>
-     <tr height="8">
-      <td colspan="3"></td>
-     </tr>
-    </table>
-   </td>
-  </tr>
- </table>
- <table width="800px" border="0" align="center" cellpadding="4" cellspacing="0">
-  <tr height="1">
-   <td bgcolor="#727272" colspan="3"></td>
-  </tr>
-  <tr bgcolor="#EEEEEE" height="15">
-   <td colspan="2"><strong>Project name 2</strong></td>
-   <td bgcolor="#EEEEEE" align="right"><input id="lnk2" type="button" value="[+] Expand" onclick="toggle_visibility('tbl2','lnk2');"></td>
-  </tr>
-  <tr>
-   <td colspan="3">
-    <table width="100%" border="0" cellpadding="4" cellspacing="0" id="tbl2" name="tbl2">
-     <tr>
-      <td colspan="3">Short summary which describes Project 2.</td>
-     </tr>
-     <tr bgcolor="#EEEEEE">
-      <td width="70%">File Name</td>
-      <td width="15%">Size</td>
-      <td  width="15%"></td>
-     </tr>
-     <tr>
-      <td>Document 1 of the project 2.doc</td>
-      <td>209.5 KB</td>
-      <td><a href="#">Download</a></td>
-     </tr>
-     <tr height="1">
-      <td colspan="3" bgcolor="#CCCCCC"></td>
-     </tr>
-     <tr>
-      <td>Document 2 of the project 2.doc</td>
-      <td>86 KB</td>
-      <td><a href="#">Download</a></td>
-     </tr>
-     <tr height="1">
-      <td colspan="3" bgcolor="#CCCCCC" ></td>
-     </tr>
-     <tr height="1">
-      <td bgcolor="#CCCCCC" colspan="3"></td>
-     </tr>
-     <tr height="1">
-      <td bgcolor="#727272" colspan="3"></td>
-     </tr>
-     <tr height="8">
-      <td colspan="3"></td>
-     </tr>
-    </table>
-   </td>
-  </tr>
- </table>
-</body>
-</html>
--->
-
-
-
-<!-- Simpler code for expandable table:
-<!DOCTYPE html>
-<head>
-<title>Untitled Document</title>
-<script type="text/javascript">
-	document.cestatus = 0;
-	function cecontrol(id){
-		if(document.cestatus == 0){
-			document.getElementById(id).style.display = "block";
-			document.cestatus = 1;
-		}else{
-			document.getElementById(id).style.display = "none";
-			document.cestatus = 0;
-		}
-	}
-	cecontrol("row");
-</script>
-<style type="text/css">
-	#row{display:none;}
-</style>
-</head>
-
-<body>
-Click to see data <button onclick="cecontrol('row')">Expand</button>
-<table id="row" >
-	<tr >
-		<td>Data</td>
-		<td>Data</td>
-	</tr>
-	<tr >
-		<td>Data</td>
-		<td>Data</td>
-	</tr>
-</table>
-</body>
-</html>
--->
-
-
-<!-- Another resourse that uses little boxes on side:
-http://acmeous.blogspot.com/2011/03/how-to-create-easy-collapsible-and.html
--->
