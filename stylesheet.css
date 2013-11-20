@@ -1,70 +1,77 @@
 /******************************* LOGIN BOX **************************************/
-#popupbox{
-	  	margin: 0; 
-		margin-left: 40%; 
-		margin-right: 40%;
-		margin-top: 50px; 
-		padding-top: 10px; 
-		width: 200px; 
-		height: 175px; 
-		position: absolute; 
+#loginscreen{
+	  	margin: auto;
+	  	margin-top:10px;
+	  	display:block;
+		padding: 5px;
+		width: 400px;
 		background: #B3F1BE; 
-		border: solid #03AF21 2px; 
-		z-index: 9; 
+		border: solid #245212 2px; 
 		font-family: serif;
 		font-size: 18px;
 		text-align: center;
-		vertical-align: middle;
-		visibility: hidden; 
+		border-radius:5px;
 }
 
 /********************************* TITLE ***************************************/
 
 .icon img {
-	width:640px;
+	width:700px;
     height: 225px;
-    margin:0;
-	vertical-align: middle
+	display:block;
+	margin: 0 auto;
 	}
 
 body {
-	background: #EBF5FF;
+	background: #c1e5e3;
 }
 
 /**************************** NAVAGATION BAR ***********************************/
-.navigate ul {
+.navigate ul
+{
 	list-style-type:none;
 	margin:0;
 	padding:0;
 	overflow:hidden;
 }
-.navigate li
+.navigate li ul /* Trying to get it so the sublists are hidden */
 {
-	float:left;
+	display: none;
 }
-.navigate a:link,a:visited
+
+.navigate ul li a
 {
-	display:block;
+	display:inline-block;
 	width:150px;
 	font-weight:bold;
 	color:#FFFFFF;
-	background-color:#87d403;
+	background-color:#99601F;
 	text-align:center;
 	padding:5px;
 	text-decoration:none;
 	text-transform:uppercase;
 	font-size: 18px;
+	float:left;
 }
-.navigate a:hover,a:active
+.navigate ul li a:hover
 {
-	background-color:#73B502;
+	background-color:#6E400B;
 }
 
 /*************************** INNER BOX ******************************/
 
 .innerbox {
 	border: none;
+	display: block;
+	float: center;
 	background-color: white;
+	margin:auto;
+	margin-top:10px;
+	padding: 10px;
+	width:90%;
+	overflow: auto;
+	box-shadow: 0 0 5px 5px grey;
+	border-radius:5px;
 }
 
 /***************************** TABLE *******************************/
@@ -75,7 +82,7 @@ font-family:sans-serif;
 width:1200px;
 margin:25px;
 border-collapse:collapse;
-border:1px solid #057b8c;
+border:1px solid #245212;
 text-align:left;
 }
 
@@ -84,7 +91,7 @@ th.header
 font-size:15px;
 text-align:left;
 height: 25px;
-background-color:#057b8c;
+background-color:#128020;
 color:#ffffff;
 cursor: pointer;
 padding: 8px;
@@ -92,7 +99,7 @@ padding-left: 5px;
 }
 
 th.headerSortUp, th.headerSortDown{
-background-color: #036978;
+background-color: #245212;
 }
 
 th.headerSortUp:after {

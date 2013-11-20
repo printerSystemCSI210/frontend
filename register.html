@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <head>
-  <title>Create an Account</title>
+  <title>Create account - Forest&trade;</title>
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
+	<div class="icon">
+      <img src="file:///Users/Mac/Documents/Fall2013/Software_Engineering/printerSystemCSI210/documents/websiteIcon.png" alt="Forest icon">
+  </div>
       <h1>Welcome to Forest.</h1>
       <p> Please fill in the below information. </p>
 
-	<form id='register' action='register.php' method='post'>
+	<form name='register' action='register.php' method='post'>
 	<h2>Register</h2>
 
-	<input type='hidden' name='submitted' id='submitted' value='1'/>
+	<!--<input type='hidden' name='submitted' id='submitted' value='1'/>-->
 
-	<label for=‘firstName' >First Name: </label>
-	<input type='text' name=‘firstName' id='name' maxlength="50" /><br>
-
-	<label for=‘lastName >Last Name: </label>
-	<input type='text' name=‘lastName' id='name' maxlength="50" /><br>
-
-	<label for='email' >Email Address:</label>
-	<input type='text' name='email' id='email' maxlength="50" /><br>
-
-	<label for=‘organization >Organization: </label>
-	<input type='text' name=‘organization’ id='name' maxlength=“100” /><br>
-
-	<select>
+	<p>First Name: <input type="text" name="firstName" id="name" maxlength="50"></p>
+	<p>Last Name: <input type="text" name="lastName" id="name" maxlength="50"></p>
+	<p>Email Address: <input type="text" name="email" id="email" maxlength="50"></p>
+	<p>Organization: <input type="text" name="organization" id="organization" maxlength="100"></p>
+	<p>Select one:
+		<select name="position">
 		<option value=“”>Select one</option>
 		<option value=“it”>IT</option>
 		<option value=“admin”>Admin</option>
 		<option value=“student”>Student</option>
-	</select><br>
- 
-	<label for='username' >Username:</label>
-	<input type='text' name='username' id='username' maxlength="50" /><br>
- 
-	<label for='password' >Password:</label>
-	<input type='password' name='password' id='password' maxlength="50" /><br>
+	</select></p>
+	<p>Username: <input type="text" name="username" id="username" maxlength="50"> </p>
+	<p>Password: <input type="text" name="password" type="password" maxlength="50"> </p>
 
 	<input type='submit' name='Submit' value='Register' />
+
  	</form>
 
 </body>

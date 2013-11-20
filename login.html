@@ -4,43 +4,30 @@
 	<link rel="stylesheet" href="stylesheet.css">
 
 	<script language="JavaScript" type="text/javascript">
-		function login(showhide) {
-			if(showhide == "show") {
-				document.getElementById('popupbox').style.visibility="visible"; }
-			else if(showhide == "hide") {
-        document.getElementById('popupbox').style.visibility="hidden"; }
-    	}
     	function forgot() {
-    		alert("To bad.");
+    		alert("Oh well!");
     	}
  	</script>
 </head>
 
 <body>
-	<h1>Welcome to Forest</h1>
+	<div class="icon">
+      <img src="file:///Users/Mac/Documents/Fall2013/Software_Engineering/printerSystemCSI210/documents/websiteIcon.png" alt="Forest icon">
+  	</div>
 
-	<!-- Create popup login window -->
-	<div id="popupbox"> 
+
+  	<div id="loginscreen"> 
+	<h1>Login to Forest</h1>
 	<form name="login" action="" method="post">
-	Username:<br/> <input name="username" size="14" /> <br />
-	Password:<br/> <input name="password" type="password" size="14" /> <br />
-	<input type="submit" name="submit" value="Login" />
+	Username <br/><input name="username" size="20"/> <br />
+	Password <br/><input name="password" type="password" size="20"/> <br /><br>
+	<input type="submit" name="submit" value="Sign In" />
 	</form>
 	<br />
-	<center><a href="javascript:login('hide');">close</a></center> 
 	</div> 
+	<br/><br/>
 
-	<p> Click <a href="javascript:login('show');">here</a> to sign in. </p>
-	<p> New? Click <a href=“url”>here</a> to create a new account. </p>
+	<p> New? Click <a href="register.html">here</a> to create a new account. </p>
 	<p> Forgot your username or password? Click <a href="javascript:forgot();">here</a>.</p>
-
-
-
-	<!-- Shows login window link 
-	<p><a href="javascript:login('show');">login</a></p>
-
-
-	<a href=“url”>Click here to create an account.</a> -->
-	
 </body>
 </html>
