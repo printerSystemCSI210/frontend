@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<head>
-  <title>Confirm account - Forest&trade;</title>
-  <link rel="stylesheet" href="stylesheet.css">  
-</head>
+<html>
 <body>
-      <h1>Welcome to Forest.</h1>
-      <p> Please fill in the below information. </p>
 
-	<h2>Register</h2>
+	<?php
+	    # Load classes from ./classes folder
+        set_include_path ( "./classes" );
+        spl_autoload_register ();
 
-	<p>First Name: <span> <?php echo $_POST["firstName"]; ?> </span> </p>
-	<p>Last Name: <span> <?php echo $_POST["lastName"]; ?> </span> </p>
-	<p>Email Adress: <span> <?php echo $_POST["email"]; ?> </span> </p>
-	<p>Organization: <span> <?php echo $_POST["organization"]; ?> </span> </p>
-	<p>Select one: <span> <?php echo $_POST["position"]; ?> </span> </p>
-	<p>Username: <span> <?php echo $_POST["username"]; ?> </span> </p>
-	<p>Password: <span> <?php echo $_POST["password"]; ?> </span> </p>
+        $user = new User ($_POST["firstName"] . " " . $_POST["lastName"],
+                           $_POST["email"],
+                           $_POST["organization"],
+                           $_POST["username"],
+                           $_POST["password"]);
 
+
+        $url = "https://forest-api.herokuapp.com/userCreate?";
+        $params = $user->getParams();
+
+        $ch = curl_init( $url );
+        curl_setopt( $ch, CURLOPT_POST, 1);
+        curl_setopt( $ch, CURLOPT_POSTFIELDS, $params);
+        curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt( $ch, CURLOPT_HEADER, 0);
+        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
+
+        echo curl_exec( $ch );
+	?>
 </body>
 </html>
