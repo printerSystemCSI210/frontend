@@ -15,10 +15,17 @@
 
 /********************************* TITLE ***************************************/
 
+.top {
+	margin:0 auto;
+	width:940px;
+	margin-bottom: 75px;
+	position: relative;
+}
+
 .icon img {
+	display: block;
 	width:700px;
     height: 225px;
-	display:block;
 	margin: 0 auto;
 	}
 
@@ -27,41 +34,62 @@ body {
 }
 
 /**************************** NAVAGATION BAR ***********************************/
+
 .navigate ul
 {
 	list-style-type:none;
-	margin:0;
-	padding:0;
-	overflow:hidden;
-}
-.navigate li ul /* Trying to get it so the sublists are hidden */
-{
-	display: none;
 }
 
-.navigate ul li a
-{
-	display:inline-block;
-	width:150px;
+.navigate li {
+	float:left;
+}
+
+.navigate ul li a{
+	float: left;
+	width:130px;
+	padding:10px;
+	background-color:#99601F;
+	
+	text-align: center;
 	font-weight:bold;
 	color:#FFFFFF;
-	background-color:#99601F;
-	text-align:center;
-	padding:5px;
 	text-decoration:none;
 	text-transform:uppercase;
 	font-size: 18px;
-	float:left;
 }
-.navigate ul li a:hover
+
+.navigate ul a:hover
 {
 	background-color:#6E400B;
 }
+
+.navigate li ul {
+	display: none;
+	margin:0;
+	padding:0;
+}
+
+.navigate li:hover ul {
+	display: block;
+	opacity: 0.95;
+}
+.navigate li:hover li {
+	float:none;
+}
+.navigate li ul li a{
+	background-color: #99601F;
+	font-size:18px;
+	text-transform: capitalize;
+	font-weight:normal;
+}
+
+
 
 /*************************** INNER BOX ******************************/
 
 .innerbox {
 	border: none;
+	position: relative;
 	display: block;
 	float: center;
 	background-color: white;
@@ -70,20 +98,27 @@ body {
 	padding: 10px;
 	width:90%;
 	overflow: auto;
-	box-shadow: 0 0 5px 5px grey;
+	box-shadow: 0 0 5px 5px gray;
 	border-radius:5px;
 }
 
 /***************************** TABLE *******************************/
 
-table, th, td
+table
 {
-font-family:sans-serif;
-width:1200px;
+width:auto + 10px;
 margin:25px;
 border-collapse:collapse;
 border:1px solid #245212;
+table-layout:fixed;
+}
+
+th, td {
+width:auto;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+border:1px solid #245212;
 text-align:left;
+table-layout:fixed;
 }
 
 th.header
@@ -94,8 +129,7 @@ height: 25px;
 background-color:#128020;
 color:#ffffff;
 cursor: pointer;
-padding: 8px;
-padding-left: 5px;
+padding: 5px;
 }
 
 th.headerSortUp, th.headerSortDown{
@@ -116,7 +150,7 @@ font-size:12px;
 padding: 5px;
 }
 
-table tbody td:nth-child(1)
+/*table tbody td:nth-child(1)
 {
 width:8%;
 }
@@ -141,7 +175,7 @@ min-width:10%;
 }
 table tbody td:nth-child(7){
 min-width:8%;
-}
+} */
 
 /*************************************** EXPANDABLE LISTS ********************************/
 
