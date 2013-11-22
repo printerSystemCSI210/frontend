@@ -27,10 +27,12 @@
 	width:700px;
     height: 225px;
 	margin: 0 auto;
+	margin-bottom:-16px;
 	}
 
 body {
-	background: #c1e5e3;
+	/*background: #c1e5e3;*/
+	background: #ebf5ff;
 }
 
 /**************************** NAVAGATION BAR ***********************************/
@@ -89,24 +91,25 @@ body {
 
 .innerbox {
 	border: none;
-	position: relative;
+	position: absolute;
 	display: block;
 	float: center;
 	background-color: white;
-	margin:auto;
+	margin: 0 auto;
 	margin-top:10px;
 	padding: 10px;
 	width:90%;
 	overflow: auto;
 	box-shadow: 0 0 5px 5px gray;
 	border-radius:5px;
+	z-index:-1;
+	left:0; right:0;
 }
 
 /***************************** TABLE *******************************/
 
 table
 {
-width:auto + 10px;
 margin:25px;
 border-collapse:collapse;
 border:1px solid #245212;
@@ -114,7 +117,6 @@ table-layout:fixed;
 }
 
 th, td {
-width:auto;
 font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 border:1px solid #245212;
 text-align:left;
@@ -137,11 +139,13 @@ background-color: #245212;
 }
 
 th.headerSortUp:after {
-content: '  \25B2';
+	float:right;
+	content: '  \25B2';
 }
 
 th.headerSortDown:after
 {
+	float:right;
 content: '  \25BC';
 }
 
@@ -150,32 +154,32 @@ font-size:12px;
 padding: 5px;
 }
 
-/*table tbody td:nth-child(1)
+table tbody td:nth-child(1)
 {
-width:8%;
+min-width:71px;
 }
 table tbody td:nth-child(2)
 {
-min-width:20%;
+min-width:150px;
 }
 table tbody td:nth-child(3)
 {
-min-width:10%;
+min-width:110px;
 }
 table tbody td:nth-child(4)
 {
-min-width:20%;
+min-width:180px;
 }
 table tbody td:nth-child(5)
 {
-min-width:20%;
+min-width:150px;
 }
 table tbody td:nth-child(6){
-min-width:10%;
+min-width:110px;
 }
 table tbody td:nth-child(7){
-min-width:8%;
-} */
+min-width:110px;
+}
 
 /*************************************** EXPANDABLE LISTS ********************************/
 
