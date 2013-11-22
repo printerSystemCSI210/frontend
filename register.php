@@ -10,7 +10,6 @@
         $user = new User ($_POST["firstName"] . " " . $_POST["lastName"],
                            $_POST["email"],
                            $_POST["organization"],
-                           $_POST["username"],
                            $_POST["password"]);
 
 
@@ -24,7 +23,18 @@
         curl_setopt( $ch, CURLOPT_HEADER, 0);
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
-        echo curl_exec( $ch );
+        $message = json_decode( curl_exec ($ch) );
+
+
+        if ( isset($message->error) ) { # If there was an error
+            echo $message->error; # Print out the error
+
+            #Print a go back button
+            $backButton = "<FORM><INPUT Type=\"button\" VALUE=\"Back\" onClick=\"history.go(-1);return true;\"></FORM>";
+            echo $backButton;
+        } else {
+            echo "Welcome to Forest, " . $message->name;
+        }
 	?>
 </body>
 </html>
