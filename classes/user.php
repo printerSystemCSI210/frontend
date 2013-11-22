@@ -13,17 +13,15 @@
 			private $email    = "";
 			private $org      = "";
 			private $orgId    = "";
-			private $username = "";
 			private $password = "";
 			private $admin    = False;
 
-			public function __construct($name, $email, $org, $username,
+			public function __construct($name, $email, $org,
 			                              $password, $admin=False) {
 			    $this->name     = $name;
 			    $this->email    = $email;
 			    $this->org      = $org;
 			    $this->orgId    = $this->getOrgId($org);
-			    $this->username = $username;
 			    $this->password = $password;
 			    $this->admin    = $admin;
 			}
