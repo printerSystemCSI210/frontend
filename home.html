@@ -10,9 +10,9 @@
   <script type="text/javascript">
   $(document).ready(function() {
   $("#homeTable").tablesorter({sortList: [[1,0]] });
-  //$.getJSON('https://forest-api.herokuapp.com/api/organizationList', function (orgs) {
-    //alert(JSON.stringify(orgs));
-  //});
+  $.getJSON('https://forest-api.herokuapp.com/api/organizationList', function (orgs) {
+    alert(JSON.stringify(orgs));
+  });
   });
   </script>
 
@@ -30,9 +30,10 @@
   <div class="navigate">
   <ul>
   <li><a href="home.html">Home</a></li>
+  <li><a href="chart.html">Data</a></li>
   <li><a href="#add">Add</a>
     <ul>
-      <li><a href="#printer">Printer</a></li>
+      <li><a href="add_printer.html">Printer</a></li>
       <li><a href="#user">User</a></li>
     </ul>
   </li>
@@ -42,7 +43,6 @@
     </ul>
   </li>
   <li><a href="#report">Report</a></li>
-  <li><a href="#issues">Issues</a></li>
   <li><a href="about.html">About</a></li>
   </ul>
   </div>
