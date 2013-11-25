@@ -10,9 +10,9 @@
   <script type="text/javascript">
   $(document).ready(function() {
   $("#homeTable").tablesorter({sortList: [[1,0]] });
-  //$.getJSON('https://forest-api.herokuapp.com/api/organizationList', function (orgs) {
-    //alert(JSON.stringify(orgs));
-  //});
+  $.getJSON('https://forest-api.herokuapp.com/api/organizationList', function (orgs) {
+    alert(JSON.stringify(orgs));
+  });
   });
   </script>
 
