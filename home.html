@@ -10,11 +10,12 @@
   <script type="text/javascript">
   $(document).ready(function() {
   $("#homeTable").tablesorter({sortList: [[1,0]] });
-  $.getJSON('https://forest-api.herokuapp.com/api/organizationList', function (orgs) {
-    alert(JSON.stringify(orgs));
-  });
+  //$.getJSON('https://forest-api.herokuapp.com/api/organizationList', function (orgs) {
+  //  alert(JSON.stringify(orgs));
+  //});
   });
   </script>
+
 
 </head>
 <body>
@@ -42,13 +43,11 @@
         <li><a href="#preferences">Preferences</a></li>
     </ul>
   </li>
-  <li><a href="#report">Report</a></li>
+  <li><a href="report.html">Report</a></li>
   <li><a href="about.html">About</a></li>
   </ul>
   </div>
 </div>
-
-
 
   <div class="innerbox">  
 	<p>Welcome to Forest, the printer status checker.  Here is where you will be able to access options and be able to check the status of printers.</p>
@@ -63,6 +62,8 @@
           <th>Make</th>
           <th>Paper level</th>
           <th>Ink level</th>
+          <th class="{sorter: false}"><img src="chart.png" alt="Chart icon"></th>
+
       </tr>
     </thead>
     <tbody>
@@ -74,6 +75,8 @@
           <td>HP LaserJet P4010 Series</td>
           <td>Low</td>
           <td>Good</td>
+          <td><button id="grapher"><img src="chart.png" alt="Chart icon"></button></td>
+
       </tr>
       <tr>
           <td>Off</td>
@@ -83,6 +86,7 @@
           <td>HP LaserJet P4010 Series</td>
           <td>None</td>
           <td>None</td>
+          <td><button id="grapher"><img src="chart.png" alt="Chart icon"></button></td>
       </tr>
     </tbody>
 </table>

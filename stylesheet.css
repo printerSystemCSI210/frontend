@@ -150,6 +150,15 @@ th.headerSortDown:after
 content: '  \25BC';
 }
 
+th img {
+	width: 20px;
+	height: 20px;
+}
+td img {
+	width: 20px;
+	height: 20px;
+}
+
 table tbody td{
 font-size:12px;
 padding: 5px;
@@ -180,6 +189,9 @@ min-width:110px;
 }
 table tbody td:nth-child(7){
 min-width:110px;
+}
+table tbody td:nth-child(8){
+min-width:50px;
 }
 
 /*************************************** EXPANDABLE LISTS ********************************/

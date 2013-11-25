@@ -1,11 +1,11 @@
+
 <!DOCTYPE html>
 <head>
-  <title>About - Forest&trade;</title>
+  <title>Forest&trade;</title>
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
 
-  
   <div class="top">
   <div class="icon">
     <a href="home.html">
@@ -34,9 +34,22 @@
   </ul>
   </div>
 </div>
-   <div class="innerbox">
-  
-	<p>Information about us goes here!</p>
+
+
+
+  <div class="innerbox">  
+	<p>Found a problem with one of the printers? Report it here!</p>
+  <form name='report' action='' method='post'>
+  <p>Location: <input type="text" name="location" id="location" maxlength="50"> </p>
+  <p>IP Address: <input type="text" name="ip" id="ip" maxlength="50"> </p>
+
+  <p>Please describe problem.</p>
+  <textarea rows="4" cols="50">Type here!</textarea><br>
+  <input type='submit' name='Submit' value='Submit' />  
+
+  </form>
+
+
 </div>
 </body>
 </html>
