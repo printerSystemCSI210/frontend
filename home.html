@@ -1,24 +1,54 @@
 
 <!DOCTYPE html>
+<html>
 <head>
   <title>Forest&trade;</title>
-  <link rel="stylesheet" href="stylesheet.css">
 
-  <script type="text/javascript" src="http://tablesorter.com/jquery-latest.js"></script> 
-  <script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  
+  <script type="text/javascript" src="scripts/jquery.tablesorter.min.js"></script>
+  <script type="text/javascript" src="scripts/forestCharts.js"></script>
+  <script type="text/javascript" src="scripts/Chart.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
   <script type="text/javascript">
   $(document).ready(function() {
-  $("#homeTable").tablesorter({sortList: [[1,0]] });
-  //$.getJSON('https://forest-api.herokuapp.com/api/organizationList', function (orgs) {
-  //  alert(JSON.stringify(orgs));
-  //});
+    $("#homeTable").tablesorter({
+      sortList: [[1,0]]
+    });
+    $( "#chart-modal" ).dialog({
+      height: 600,
+      width: 850,
+      modal: true,
+      autoOpen: false
+    });
   });
+  
+  function openModal(printerId) {
+    if(!printerId) {
+      printerId = "5283b32024e02d0200000002";
+    }
+    var titleInfo = printerGraphs(printerId, function (titleInfo) {
+        $("#chart-modal").dialog("option", "title", titleInfo + " - Status Graphs");
+        $("#chart-modal").dialog("open");
+    });
+  }
   </script>
-
-
 </head>
+  
 <body>
+  <div id="chart-modal">
+    <h3 id="printerInfo" style="display: none;"></h1>
+    <h4>Consumables:</h4>
+    <canvas id="consumables" width="800" height="400"></canvas>
+    <h4>Page Count:</h4>
+    <canvas id="pageCount" width="800" height="400"></canvas>
+    <h4>Status:</h4>
+    <canvas id="statusPie" width="400" height="400"></canvas>
+  </div>
 
   <div class="top">
   <div class="icon">
@@ -63,7 +93,6 @@
           <th>Paper level</th>
           <th>Ink level</th>
           <th class="{sorter: false}"><img src="chart.png" alt="Chart icon"></th>
-
       </tr>
     </thead>
     <tbody>
@@ -75,8 +104,7 @@
           <td>HP LaserJet P4010 Series</td>
           <td>Low</td>
           <td>Good</td>
-          <td><button id="grapher"><img src="chart.png" alt="Chart icon"></button></td>
-
+          <td><a class="grapher" onclick="openModal();" style="cursor:pointer;"><img src="chart.png" alt="Chart icon"></a></td>
       </tr>
       <tr>
           <td>Off</td>
@@ -86,7 +114,7 @@
           <td>HP LaserJet P4010 Series</td>
           <td>None</td>
           <td>None</td>
-          <td><button id="grapher"><img src="chart.png" alt="Chart icon"></button></td>
+          <td><a class="grapher" onclick="openModal();" style="cursor:pointer;"><img src="chart.png" alt="Chart icon"></a></td>
       </tr>
     </tbody>
 </table>
