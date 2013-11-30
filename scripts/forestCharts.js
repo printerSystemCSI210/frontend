@@ -1,9 +1,9 @@
 //Controls the maximum number of data sets possible
-var colorStrings = ['rgba(40,73,7,1)',
-					'rgba(56,37,19,1)',
-					'rgba(54,57,66,1)',
+var colorStrings = ['rgba(92,131,47,1)',
+                    'rgba(64,67,100,1)',
+					'rgba(80,37,19,1)',
 					'rgba(216,202,168,1)',
-					'rgba(92,131,47,1)'];
+                    'rgba(40,73,7,1)'];
 var statusLabels = ['OK', 'Working', 'Error'];
 
 /**
@@ -24,7 +24,6 @@ var printerGraphs = function (printId, callback) {
 				return;
 			}
 			printerName = data.name + ' (' + data.location + ')';
-			$('#printerInfo').text(printerName);
             $.getJSON('https://forest-api.herokuapp.com/statusList?printerId=' + printId, null,
 				function (statusData) {
 					var pieData = [0, 0, 0],
@@ -52,7 +51,9 @@ var printerGraphs = function (printId, callback) {
 						}
 						pageCounts[i] = currStatus.pageCount;
                         lowerCaseStatus = currStatus.status.toLowerCase();
-						if (lowerCaseStatus.contains('idle') || lowerCaseStatus.contains('ready')) {
+						if (lowerCaseStatus.contains('idle') ||
+                            lowerCaseStatus.contains('ready') ||
+                            lowerCaseStatus.contains('sleep')) {
 							pieData[0] += 1;
 						} else if (lowerCaseStatus.contains('processing') || lowerCaseStatus.contains('working')) {
 							pieData[1] += 1;
@@ -62,15 +63,18 @@ var printerGraphs = function (printId, callback) {
 					}
                     if ($('#consumables').get(0)) {
                         ctx = $('#consumables').get(0).getContext('2d');
-                        makeLineGraph(ctx, dateLabels, consumables, consumablesLegend);
+                        makeLineGraph(ctx, dateLabels, consumables);
+                        makeLegend(consumablesLegend, 'consumables');
                     }
                     if ($('#pageCount').get(0)) {
                         ctx = $('#pageCount').get(0).getContext('2d');
-                        makeLineGraph(ctx, dateLabels, [pageCounts], ['Page Count']);
+                        makeLineGraph(ctx, dateLabels, [pageCounts]);
+                        makeLegend(['Page Count'], 'pageCount');
                     }
                     if ($('#statusPie').get(0)) {
                         ctx = $('#statusPie').get(0).getContext('2d');
-                        makePieChart(ctx, pieData, statusLabels);
+                        makePieChart(ctx, pieData);
+                        makeLegend(statusLabels, 'statusPie');
                     }
                     if (typeof callback == 'function') {
                         callback(printerName);
@@ -79,7 +83,14 @@ var printerGraphs = function (printId, callback) {
 		});
 };
 
-var makeLineGraph = function (context, dataLabels, dataSets, legend) {
+var makeLegend = function (labels, prefix) {
+    if (labels.length !== 0) {
+        var htmlString = '<li>' + labels.join('</li>\n<li>') + '</li>';
+        $('#' + prefix + '\\.legend').html(htmlString);
+    }
+};
+
+var makeLineGraph = function (context, dataLabels, dataSets) {
 	var constructedDataSets = [],
         finalData,
         newChart,
@@ -95,17 +106,15 @@ var makeLineGraph = function (context, dataLabels, dataSets, legend) {
 		labels : dataLabels,
 		datasets : constructedDataSets
 	};
-	console.log(legend.toString());
 	newChart = new Chart(context).Line(finalData, {animation: false});
 };
 
-var makePieChart = function (context, data, legend) {
+var makePieChart = function (context, data) {
 	var finalData = [],
         newChart,
         i;
 	for (i = 0; i < data.length && i < colorStrings.length; i += 1) {
 		finalData[i] = {value: data[i], color: colorStrings[i]};
 	}
-	console.log(legend.toString());
 	newChart = new Chart(context).Pie(finalData, {animation: false});
 };
