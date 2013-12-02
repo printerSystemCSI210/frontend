@@ -35,7 +35,7 @@
             $backButton = "<FORM><INPUT Type=\"button\" VALUE=\"Back\" onClick=\"history.go(-1);return true;\"></FORM>";
             echo $backButton;
         } else {
-            echo $message;
+            echo "The printer, " . $message->name . ", was successfully added.";
         }
 	?>
 </body>
