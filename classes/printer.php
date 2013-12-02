@@ -39,11 +39,11 @@
 
 			    $url .= "organizationId=" . $this->organization->getId();
 			    $url .= "&name="          . $this->name;
-                $url .= "&location="      . $this->location;
-                $url .= "&ipAddress="     . $this->ip;
-                $url .= "&manufacturer="  . $this->manufacturer;
-                $url .= "&model="         . $this->model;
-                $url .= "&serial="        . $this-> ;
+                            $url .= "&location="      . $this->location;
+                            $url .= "&ipAddress="     . $this->ip;
+                            $url .= "&manufacturer="  . $this->manufacturer;
+                            $url .= "&model="         . $this->model;
+                            $url .= "&serial="        . $this->sn;
 
 			    return $url;
 			}
