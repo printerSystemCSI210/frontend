@@ -16,11 +16,11 @@
 			                            $password, $admin=False) {
 			    $this->name     = $name;
 			    $this->email    = $email;
-			    $this->orgName  = $org;
+			    $this->orgName  = $orgName;
 			    $this->password = $password;
 			    $this->admin    = $admin;
 			    
-			    $organization = new Organization($orgName);
+			    $this->organization = new Organization($orgName);
 			}
 
 			# Gets the parameters which can be passed to the api
@@ -28,7 +28,7 @@
 			public function getParams() {
 			    $url = "";
 
-			    $url .= "organizationId=" . $this->organization->getId;
+			    $url .= "organizationId=" . $this->organization->getId();
 			    $url .= "&name="     . $this->name;
 			    $url .= "&email="    . $this->email;
 			    $url .= "&password=" . $this->password;
