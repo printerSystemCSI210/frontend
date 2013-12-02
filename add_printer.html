@@ -1,8 +1,10 @@
 
 <!DOCTYPE html>
+<html>
 <head>
   <title>Add Printer - Forest&trade;</title>
-  <link rel="stylesheet" href="stylesheet.css">
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
 
@@ -21,7 +23,7 @@
   <li><a href="#add">Add</a>
     <ul>
       <li><a href="add_printer.html">Printer</a></li>
-      <li><a href="#user">User</a></li>
+      <li><a href="register.html">User</a></li>
     </ul>
   </li>
   <li><a href="#MyForst">Manage</a>
@@ -29,7 +31,7 @@
         <li><a href="#preferences">Preferences</a></li>
     </ul>
   </li>
-  <li><a href="#report">Report</a></li>
+  <li><a href="report.html">Report</a></li>
   <li><a href="about.html">About</a></li>
   </ul>
   </div>
@@ -40,15 +42,15 @@
 <p> Fill in required information to add a printer.</p>
 <form name='addPrinter' action='' method='post'>
 
-  <p>Name: <input type="text" name="printerName" id="name" maxlength="50"></p>
+  <p>Printer: <input type="text" name="printerName" id="name" maxlength="50"></p>
   <p>Organization: <input type="text" name="organization" id="organization" maxlength="100"></p>
-  <p>IP Address: <input type="text" name="ip" id="ip" maxlength="50"> </p>
+  <p>IP Address: <input type="text" name="ip" id="ip" maxlength="50"></p>
 
   <p>Optional information:</p>
   <p>Location: <input type="text" name="location" id="location" maxlength="50"> </p>
   <p>Manufacturer: <input type="text" name="manufacturer" id="manufacturer" maxlength="50"> </p>
   <p>Model: <input type="text" name="model" id="model" maxlength="50"> </p>
-  <p>Serial number: <input type="text" name="seriel" id="seriel" maxlength="50"> </p>
+  <p>Serial number: <input type="text" name="serial" id="serial" maxlength="50"> </p>
 
 
   <input type='submit' name='Add' value='Add' />	

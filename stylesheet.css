@@ -93,7 +93,6 @@ body {
 	border: none;
 	position: absolute;
 	display: block;
-	float: center;
 	background-color: white;
 	margin: 0 auto;
 	margin-top:10px;
@@ -150,6 +149,15 @@ th.headerSortDown:after
 content: '  \25BC';
 }
 
+th img {
+	width: 20px;
+	height: 20px;
+}
+td img {
+	width: 20px;
+	height: 20px;
+}
+
 table tbody td{
 font-size:12px;
 padding: 5px;
@@ -181,9 +189,37 @@ min-width:110px;
 table tbody td:nth-child(7){
 min-width:110px;
 }
+table tbody td:nth-child(8){
+min-width:50px;
+}
 
 /*************************************** EXPANDABLE LISTS ********************************/
 
 .expandlist {
 	font-size: 18px;
 }
+
+/*************************************** GRAPHS & LEGENDS ********************************/
+canvas.graph {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+.legend {
+    text-align: center;
+    margin: 1px;
+}
+.legend li {
+    display: inline-block;
+    font-size: 0.8em;
+    padding: 0;
+    margin: 0 0.5em;
+}
+.legend li:before {
+    content: '\25CF  ';
+}
+.legend li:nth-child(1) {color: rgba(92,131,47,1);}
+.legend li:nth-child(2) {color: rgba(64,67,100,1);}
+.legend li:nth-child(3) {color: rgba(80,37,19,1);}
+.legend li:nth-child(4) {color: rgba(216,202,168,1);}
+.legend li:nth-child(5) {color: rgba(40,73,7,1);}
