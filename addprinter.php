@@ -57,7 +57,6 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
 
   <h3>Optional information:</h3>
   <p>Location: <input type="text" name="location" id="location" maxlength="50"> </p>
-  <p>Manufacturer: <input type="text" name="manufacturer" id="manufacturer" maxlength="50"> </p>
   <p>Model: <input type="text" name="model" id="model" maxlength="50"> </p>
   <p>Serial number: <input type="text" name="serial" id="serial" maxlength="50"> </p>
 
