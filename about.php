@@ -50,5 +50,9 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
   
 	<p>Information about us goes here!</p>
 </div>
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>

@@ -5,6 +5,17 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
     header("Location: login.php");
     exit();
 }
+$url = "https://forest-api.herokuapp.com/printerList?";
+$params = "organizationId=" . $_SESSION["activeOrganization"];
+
+$ch = curl_init( $url );
+curl_setopt( $ch, CURLOPT_POST, 1);
+curl_setopt( $ch, CURLOPT_POSTFIELDS, $params);
+curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+curl_setopt( $ch, CURLOPT_HEADER, 0);
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
+
+$message = json_decode( curl_exec ($ch) );
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +36,10 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
   <script type="text/javascript">
   $(document).ready(function() {
     $("#homeTable").tablesorter({
-      sortList: [[1,0]]
+      sortList: [[1,0]],
+      headers: {
+        2: {sorter: "ipAddress"}
+      }
     });
     $( "#chart-modal" ).dialog({
       height: 600,
@@ -102,32 +116,30 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
           <th>Name</th>
           <th>IP Address</th>
           <th>Alert</th>
-          <th>Make</th>
-          <th>Paper level</th>
-          <th>Ink level</th>
+          <th>Model</th>
+          <th>Page Count</th>
+          <th>Toner Level</th>
           <th class="{sorter: false}"><img src="chart.png" alt="Chart icon"></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-          <td>Idle</td>
-          <td>Trumbower 48</td>
-          <td>192.168.130.238</td>
-          <td></td>
-          <td>HP LaserJet P4010 Series</td>
-          <td>Low</td>
-          <td>Good</td>
-          <td><a class="grapher" onclick="openModal();" style="cursor:pointer;"><img src="chart.png" alt="Chart icon"></a></td>
-      </tr>
-      <tr>
-          <td>Off</td>
-          <td>Shankwieler Lab</td>
-          <td>192.168.130.287</td>
-          <td>Bad</td>
-          <td>HP LaserJet P4010 Series</td>
-          <td>None</td>
-          <td>None</td>
-          <td><a class="grapher" onclick="openModal();" style="cursor:pointer;"><img src="chart.png" alt="Chart icon"></a></td>
+      <?php
+        $printers = $message->printers;
+        foreach($printers as $printer)
+        { ?>
+          <tr>
+              <td><?php echo $printer->status->message; ?></td>
+              <td><?php echo $printer->name; ?></td>
+              <td><?php echo $printer->ipAddress; ?></td>
+              <td></td>
+              <td><?php echo $printer->model; ?></td>
+              <td><?php echo $printer->status->pageCount; ?></td>
+              <td><?php echo $printer->status->consumables[0]->percentage; ?>%</td>
+              <td><a class="grapher" onclick="openModal('<?php echo $printer->id; ?>');" style="cursor:pointer;"><img src="chart.png" alt="Chart icon"></a></td>
+          </tr>
+          <?php
+        }
+      ?>
       </tr>
     </tbody>
 </table>
