@@ -77,9 +77,6 @@ class Printer {
         if ( $this->location != "" )
             $url .= "&location=" . $this->location;
         
-        if ( $this->manufacturer != "" )
-            $url .= "&manufacturer=" . $this->manufacturer;
-    
         if ( $this->model != "" )
             $url .= "&model=" . $this->model;
     
@@ -88,16 +85,6 @@ class Printer {
 
         return $url;
     }
-
-
-#------------------------------------------------------------------------------
-# Static Methods
-#------------------------------------------------------------------------------
-    # Returns an array of consumables for the printer with a given id
-    public static function getConsumables( $id ) {
-        return null;
-    }
-
 
 } # End class
 ?>
