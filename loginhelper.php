@@ -30,11 +30,6 @@ session_start();
                 <form><input type="button" value="Back" onClick="history.go(-1);return true;" /></form>
             </div>
             <?php
-            //echo $message->error; # Print out the error
-// 
-//             #Print a go back button
-//             $backButton = "<form><input type=\"button\" value=\"Back\" onClick=\"history.go(-1);return true;\"></form>";
-//             echo $backButton;
         } else {
             $_SESSION["loggedIn"] = true;
             $_SESSION["userId"] = $message->id;

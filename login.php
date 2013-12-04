@@ -32,7 +32,7 @@ unset($_SESSION["email"]);
   	</div>
 
 
-  	<div class="loginscreen">
+  	<div class="infobox">
 	<h1>Login to Forest</h1>
 	<form name="login" action="loginhelper.php" method="post">
 	    <p>Email<br/><input name="email" type="email" size="20"/><p>
@@ -40,10 +40,9 @@ unset($_SESSION["email"]);
     	<p><input type="submit" name="submit" value="Sign In" /></p>
 	</form>
 	<br />
-	</div> 
-	<br/><br/>
-
 	<p> New? Click <a href="registeruser.php">here</a> to create a new account. </p>
 	<p> Forgot your username or password? Click <a href="javascript:forgot();">here</a>.</p>
+	</div> 
+	<br/><br/>
 </body>
 </html>

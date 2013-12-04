@@ -35,14 +35,10 @@
             <div class="errorbox">
                 <p><?php echo $message->error; ?></p>
                 <form><input type="button" value="Back" onclick="history.go(-1);return true;" /></form>
-            </div> <?php
-                // echo $message->error; # Print out the error
-// 
-//                 #Print a go back button
-//                 $backButton = "<form><input type=\"button\" value=\"Back\" onClick=\"history.go(-1);return true;\"></form>";
-//                 echo $backButton;
+            </div>
+            <?php
             } else { ?>
-            <div class="loginscreen">
+            <div class="infobox">
                 <p>Welcome to Forest, <?php echo $message->name; ?>!</p>
                 <p><a href="login.php">Login to Forest</a></p>
             </div>

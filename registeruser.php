@@ -22,7 +22,7 @@
 	<div class="icon">
       <img src="websiteIcon.png" alt="Forest icon">
     </div>
-    <div class="loginscreen">
+    <div class="infobox">
       <h1>Welcome to Forest.</h1>
       <p> Please fill in the below information. </p>
 

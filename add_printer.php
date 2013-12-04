@@ -16,7 +16,7 @@
                                     $_POST["organization"],
                                     $_POST["ip"],
                                     $_POST["location"],
-                                    $_POST["manufacturer"],
+                                    "",
                                     $_POST["model"],
                                     $_POST["serial"] );
 
@@ -38,5 +38,14 @@
                 <p><?php echo $message->error; ?></p>
                 <form><input type="button" value="Back" onclick="history.go(-1);return true;" /></form>
             </div>
+            <?php
+            }
+            else { ?>
+            <div class="infobox">
+                <p>Printer at IP Address <?php echo $message->ipAddress; ?> added successfully.</p>
+                <p><a href="home.php">Home</a></p>
+            </div>
+            <?php
+            } ?>
     </body>
 </html>

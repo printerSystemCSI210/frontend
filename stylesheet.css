@@ -7,8 +7,8 @@
 input {
     font-size: 1em;
 }
-/******************************* LOGIN BOX **************************************/
-.loginscreen{
+/******************************** INFO BOX **************************************/
+.infobox{
     margin: 20px auto;
     display:block;
     padding: 5px;
