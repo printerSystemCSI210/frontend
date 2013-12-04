@@ -4,10 +4,9 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
     session_destroy();
     header("Location: login.php");
     exit();
-  }
-
+}
 $url = "https://forest-api.herokuapp.com/printerList?";
-$params = "organizatrionId=" . $_SESSION["activeOrganization"]->id;
+$params = "organizationId=" . $_SESSION["activeOrganization"];
 
 $ch = curl_init( $url );
 curl_setopt( $ch, CURLOPT_POST, 1);
@@ -18,7 +17,6 @@ curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
 $message = json_decode( curl_exec ($ch) );
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,8 +37,8 @@ $message = json_decode( curl_exec ($ch) );
   $(document).ready(function() {
     $("#homeTable").tablesorter({
       sortList: [[1,0]],
-      headers:{
-        2; {sorter:"ipAddress"}
+      headers: {
+        2: {sorter: "ipAddress"}
       }
     });
     $( "#chart-modal" ).dialog({
@@ -90,6 +88,7 @@ $message = json_decode( curl_exec ($ch) );
   <div class="navigate">
   <ul>
   <li><a href="home.php">Home</a></li>
+  <li><a href="chart.php">Data</a></li>
   <li><a href="#add">Add</a>
     <ul>
       <li><a href="addprinter.php">Printer</a></li>
@@ -118,34 +117,32 @@ $message = json_decode( curl_exec ($ch) );
           <th>IP Address</th>
           <th>Alert</th>
           <th>Model</th>
-          <th>Page count</th>
-          <th>Toner level</th>
+          <th>Page Count</th>
+          <th>Toner Level</th>
           <th class="{sorter: false}"><img src="chart.png" alt="Chart icon"></th>
       </tr>
     </thead>
     <tbody>
-      <? php
+      <?php
         $printers = $message->printers;
         foreach($printers as $printer)
-          { ?>
-            <tr>
-            <!--Status --> <td><? php echo $printer->status->message; ?></td>
-            <!--Name   --> <td><? php echo $printer->name; ?></td>
-            <!--Ip     --> <td><? php echo $printer->ipAddress; ?></td>
-            <!--Alert  --> <td><? php echo ""; ?></td>
-            <!--Model  --> <td><? php echo $printer->model; ?></td>
-            <!--Page   --> <td><? php echo $printer->status->pageCount; ?></td>
-            <!--Toner -->  <td><? php echo $printer->status->consumables[0]->percentage; ?></td>
-            <!--Chart -->  <td><a class="grapher" onclick="openModal('<? php echo $printer->id; ?>');" style="cursor:pointer;"><img src="chart.png" alt="Chart icon"></a></td>
-            </tr>
-        <?  }
+        { ?>
+          <tr>
+              <td><?php echo $printer->status->message; ?></td>
+              <td><?php echo $printer->name; ?></td>
+              <td><?php echo $printer->ipAddress; ?></td>
+              <td></td>
+              <td><?php echo $printer->model; ?></td>
+              <td><?php echo $printer->status->pageCount; ?></td>
+              <td><?php echo $printer->status->consumables[0]->percentage; ?>%</td>
+              <td><a class="grapher" onclick="openModal('<?php echo $printer->id; ?>');" style="cursor:pointer;"><img src="chart.png" alt="Chart icon"></a></td>
+          </tr>
+          <?php
+        }
       ?>
+      </tr>
     </tbody>
 </table>
 </div>
-<br>
-<br>
-<br>
-<br>
 </body>
 </html>
