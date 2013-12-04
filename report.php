@@ -28,7 +28,6 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
   <div class="navigate">
   <ul>
   <li><a href="home.php">Home</a></li>
-  <li><a href="chart.php">Data</a></li>
   <li><a href="#add">Add</a>
     <ul>
       <li><a href="addprinter.php">Printer</a></li>
@@ -62,5 +61,9 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
 
 
 </div>
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>

@@ -29,7 +29,6 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
   <div class="navigate">
   <ul>
   <li><a href="home.php">Home</a></li>
-  <li><a href="chart.php">Data</a></li>
   <li><a href="#add">Add</a>
     <ul>
       <li><a href="addprinter.php">Printer</a></li>
@@ -52,7 +51,7 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
 <form name='addPrinter' action='add_printer.php' method='post'>
 
   <h3> Fill in required information to add a printer.</h3>
-  <p>Printer: <input type="text" name="printerName" id="name" maxlength="50"></p>
+  <p>Printer Name: <input type="text" name="printerName" id="name" maxlength="50"></p>
   <p>Organization: <input type="text" name="organization" id="organization" maxlength="100"></p>
   <p>IP Address: <input type="text" name="ip" id="ip" maxlength="50"></p>
 
@@ -66,5 +65,9 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
 </form>
 
 </div>
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>
