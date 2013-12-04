@@ -38,8 +38,8 @@ session_start();
         } else {
             $_SESSION["loggedIn"] = true;
             $_SESSION["userId"] = $message->id;
-            $_SESSION["organizations"] = $message->organization;
-            $_SESSION["activeOrganization"] = $_SESSION["organizations"][0];
+            $_SESSION["organizations"] = $message->organizations;
+            $_SESSION["activeOrganization"] = $message->organizations[0];
             $_SESSION["admin"] = $message->admin;
             $_SESSION["name"] = $message->name;
             $_SESSION["email"] = $message->email;

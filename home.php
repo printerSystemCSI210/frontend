@@ -135,7 +135,7 @@ $message = json_decode( curl_exec ($ch) );
               <td><?php echo $printer->model; ?></td>
               <td><?php echo $printer->status->pageCount; ?></td>
               <td><?php echo $printer->status->consumables[0]->percentage; ?>%</td>
-              <td><a class="grapher" onclick="openModal('<?php echo $printer->id; ?>');" style="cursor:pointer;"><img src="chart.png" alt="Chart icon"></a></td>
+              <td><a class="grapher" onclick="openModal('<?php echo $printer->id; ?>');"><img src="chart.png" alt="Chart icon"></a></td>
           </tr>
           <?php
         }
