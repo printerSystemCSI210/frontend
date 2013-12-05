@@ -258,8 +258,8 @@ min-width:50px;
 .legend li:before {
     content: '\25CF  ';
 }
-.legend li:nth-child(1) {color: rgba(92,131,47);}
-.legend li:nth-child(2) {color: rgba(64,67,100);}
-.legend li:nth-child(3) {color: rgba(80,37,19);}
-.legend li:nth-child(4) {color: rgba(216,202,168);}
-.legend li:nth-child(5) {color: rgba(40,73,7);}
+.legend li:nth-child(1) {color: rgb(92,131,47);}
+.legend li:nth-child(2) {color: rgb(64,67,100);}
+.legend li:nth-child(3) {color: rgb(80,37,19);}
+.legend li:nth-child(4) {color: rgb(216,202,168);}
+.legend li:nth-child(5) {color: rgb(40,73,7);}
