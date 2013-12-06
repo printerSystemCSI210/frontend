@@ -88,7 +88,6 @@ $message = json_decode( curl_exec ($ch) );
   <div class="navigate">
   <ul>
   <li><a href="home.php">Home</a></li>
-  <li><a href="chart.php">Data</a></li>
   <li><a href="#add">Add</a>
     <ul>
       <li><a href="addprinter.php">Printer</a></li>
@@ -101,7 +100,8 @@ $message = json_decode( curl_exec ($ch) );
     </ul>
   </li>
   <li><a href="report.php">Report</a></li>
-  <li><a href="about.php">About</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
   </ul>
   </div>
 </div>
@@ -145,4 +145,8 @@ $message = json_decode( curl_exec ($ch) );
 </table>
 </div>
 </body>
+<br>
+<br>
+<br>
+<br>
 </html>

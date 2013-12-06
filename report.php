@@ -9,7 +9,7 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Forest&trade;</title>
+  <title>Report - Forest&trade;</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
@@ -40,7 +40,8 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
     </ul>
   </li>
   <li><a href="report.php">Report</a></li>
-  <li><a href="about.php">About</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
   </ul>
   </div>
 </div>

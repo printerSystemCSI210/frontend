@@ -41,8 +41,8 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
     </ul>
   </li>
   <li><a href="report.php">Report</a></li>
-  <li><a href="about.php">About</a></li>
-  </ul>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>  </ul>
   </div>
 </div>
 
@@ -62,7 +62,6 @@ if(!isset($_SESSION['loggedIn']) || !isset($_SESSION['userId'])) {
 
   <p><input type='submit' name='Add' value='Add' /></p>
 </form>
-
 </div>
 <br>
 <br>
